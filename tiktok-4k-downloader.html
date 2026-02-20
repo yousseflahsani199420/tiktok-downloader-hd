@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TikTok 4K Downloader - Ultra HD Quality | Free Downloads</title>
+<meta name="description" content="Get TikTok videos in stunning 4K quality. The highest resolution available for free download.">
+<meta name="keywords" content="tiktok 4k downloader, 4k tiktok download, ultra hd tiktok downloader">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://tiktokdownloader.online/tiktok-4k-downloader.html">
+
+<!-- OpenGraph -->
+<meta property="og:title" content="TikTok 4K Downloader - Ultra HD Quality | Free Downloads">
+<meta property="og:description" content="Get TikTok videos in stunning 4K quality. The highest resolution available for free download.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tiktokdownloader.online/tiktok-4k-downloader.html">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TikTok 4K Downloader - Ultra HD Quality | Free Downloads">
+<meta name="twitter:description" content="Get TikTok videos in stunning 4K quality. The highest resolution available for free download.">
+
+<!-- Performance -->
+<meta name="google" content="notranslate">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3TDZE61768"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-3TDZE61768');
+</script>
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "TikTok 4K Downloader",
+  "url": "https://tiktokdownloader.online/tiktok-4k-downloader.html",
+  "description": "Get TikTok videos in stunning 4K quality. The highest resolution available for free download.",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is 4K really available?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, if the original video was uploaded in 4K, we can download it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How big are 4K files?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "4K videos are larger - typically 50-100MB per minute of video."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- React CDN -->
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.spinner {
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.progress-bar {
+  height: 4px;
+  background: #e0e0e0;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transition: width 0.3s ease;
+}
+
+.quality-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.quality-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
+}
+
+.quality-card.selected {
+  border-color: #667eea;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.08), rgba(118, 75, 162, 0.08));
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+}
+
+.input-field {
+  transition: all 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.alert {
+  border-left-width: 4px;
+  padding: 1rem;
+  border-radius: 0 8px 8px 0;
+}
+
+.alert-error {
+  background: #fef2f2;
+  border-color: #ef4444;
+  color: #b91c1c;
+}
+
+.alert-success {
+  background: #f0fdf4;
+  border-color: #22c55e;
+  color: #15803d;
+}
+
+.video-preview {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.seo-content {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-top: 2rem;
+  color: white;
+}
+
+.seo-content h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.seo-content h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.seo-content p {
+  opacity: 0.9;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.seo-content ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.faq-item {
+  margin-bottom: 1.5rem;
+}
+
+.faq-item h3 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.related-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.related-link {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+.related-link:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.breadcrumb {
+  display: flex;
+  gap: 0.5rem;
+  color: white;
+  opacity: 0.8;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.breadcrumb a {
+  color: white;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .glass-effect {
+    margin: 0 0.5rem;
+  }
+
+  .seo-content {
+    padding: 1rem;
+  }
+}
+</style>
+</head>
+<body>   <a href="index.html">Back to Home</a>
+
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState, useCallback } = React;
+
+const CONFIG = {
+  API_ENDPOINT: 'https://www.tikwm.com/api/',
+  SITE_URL: 'https://tiktokdownloader.online/',
+  MAX_TITLE_LENGTH: 60
+};
+
+const utils = {
+  validateTikTokUrl: (url) => {
+    const patterns = [
+      /tiktok\.com\/@[\w.]+\/video\/\d+/,
+      /tiktok\.com\/t\/[\w]+/,
+      /vm\.tiktok\.com\/[\w]+/,
+      /vt\.tiktok\.com\/[\w]+/
+    ];
+    return patterns.some(pattern => pattern.test(url));
+  },
+
+  sanitizeFilename: (title) => {
+    return title
+      .replace(/[^a-zA-Z0-9\u4e00-\u9fa5\s-]/g, '_')
+      .replace(/\s+/g, '_')
+      .substring(0, 50) || 'tiktok_video';
+  },
+
+  truncateText: (text, maxLength) => {
+    if (!text) return '';
+    return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
+  }
+};
+
+const App = () => {
+  return (
+    <div className="min-h-screen py-6 px-4">
+      <Header />
+      <main className="max-w-4xl mx-auto space-y-6">
+        <Breadcrumb />
+        <DownloadCard />
+        <SEOContent />
+        <HowToUse />
+        <Features />
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+const Header = () => (
+  <header className="text-center mb-8 pt-4">
+    <h1 className="text-4xl md:text-5xl font-bold text-white mb-3">
+      <span className="inline-block mr-2">🎵</span>
+      Download TikTok Videos in 4K Ultra HD
+    </h1>
+    <p className="text-white/90 text-lg max-w-xl mx-auto">
+      Get TikTok videos in stunning 4K quality. The highest resolution available for free download.
+    </p>
+  </header>
+);
+
+const Breadcrumb = () => (
+  <nav className="breadcrumb max-w-4xl mx-auto">
+    <a href="/index.html">Home</a>
+    <span>/</span>
+    <span>TikTok 4K Downloader</span>
+  </nav>
+);
+
+const DownloadCard = () => {
+  const [url, setUrl] = useState('');
+  const [quality, setQuality] = useState('hd');
+  const [loading, setLoading] = useState(false);
+  const [downloading, setDownloading] = useState(false);
+  const [downloadProgress, setDownloadProgress] = useState(0);
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+  const [videoInfo, setVideoInfo] = useState(null);
+
+  const pasteFromClipboard = useCallback(async () => {
+    try {
+      const text = await navigator.clipboard.readText();
+      setUrl(text);
+      setError('');
+    } catch (err) {
+      setError('Unable to access clipboard. Please paste manually.');
+    }
+  }, []);
+
+  const fetchVideo = useCallback(async () => {
+    if (!url.trim()) {
+      setError('Please enter a TikTok video URL');
+      return;
+    }
+
+    if (!utils.validateTikTokUrl(url)) {
+      setError('Please enter a valid TikTok URL');
+      return;
+    }
+
+    setLoading(true);
+    setError('');
+    setSuccess('');
+    setVideoInfo(null);
+
+    try {
+      const response = await fetch(CONFIG.API_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `url=${encodeURIComponent(url)}&hd=${quality==='hd'?1:0}`
+      });
+
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+      const data = await response.json();
+
+      if (data.data && (data.data.play || data.data.music)) {
+        const isAudioOnly = quality === 'audio';
+        setVideoInfo({
+          url: isAudioOnly ? data.data.music : data.data.play,
+          title: data.data.title || 'TikTok Video',
+          author: data.data.author?.nickname || 'Unknown',
+          cover: data.data.cover,
+          duration: data.data.duration,
+          isAudio: isAudioOnly
+        });
+        setSuccess('Video found! Click Download Now.');
+      } else throw new Error('No video data');
+    } catch (err) {
+      setError('Failed to fetch video. Please try again later.');
+    } finally {
+      setLoading(false);
+    }
+  }, [url, quality]);
+
+  const downloadDirect = useCallback(async () => {
+    if (!videoInfo?.url) return;
+    setDownloading(true);
+    setDownloadProgress(0);
+
+    try {
+      const response = await fetch(videoInfo.url);
+      if (!response.ok) throw new Error('Download failed');
+
+      const blob = await response.blob();
+      const blobUrl = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = blobUrl;
+      const ext = videoInfo.isAudio ? 'mp3' : 'mp4';
+      link.download = `${utils.sanitizeFilename(videoInfo.title)}_${quality}.${ext}`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(blobUrl);
+      setSuccess('✅ Downloaded successfully!');
+      setTimeout(() => { setVideoInfo(null); setUrl(''); setSuccess(''); }, 3000);
+    } catch (err) {
+      window.open(videoInfo.url, '_blank');
+      setError('Opening in new tab...');
+    } finally {
+      setDownloading(false);
+    }
+  }, [videoInfo, quality]);
+
+  const resetForm = useCallback(() => {
+    setVideoInfo(null);
+    setError('');
+    setSuccess('');
+  }, []);
+
+  const qualityOptions = [
+    { id: 'hd', icon: '🎬', label: 'HD', desc: 'Best Quality' },
+    { id: 'sd', icon: '📱', label: 'SD', desc: 'Smaller Size' },
+    { id: 'audio', icon: '🎵', label: 'Audio', desc: 'MP3 Only' }
+  ];
+
+  return (
+    <div className="glass-effect rounded-2xl p-6 md:p-8 shadow-2xl">
+      <div className="mb-6">
+        <label className="block text-gray-700 font-semibold mb-2">TikTok Video URL</label>
+        <div className="flex gap-2">
+          <input
+            type="text"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && !videoInfo && fetchVideo()}
+            placeholder="https://www.tiktok.com/@username/video/1234567890"
+            className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-indigo-500 focus:outline-none input-field"
+            disabled={loading || downloading}
+          />
+          <button onClick={pasteFromClipboard} disabled={loading || downloading} className="px-4 py-3 bg-gray-100 hover:bg-gray-200 rounded-xl">📋</button>
+        </div>
+      </div>
+
+      <div className="mb-6">
+        <label className="block text-gray-700 font-semibold mb-3">Select Quality</label>
+        <div className="grid grid-cols-3 gap-3">
+          {qualityOptions.map((q) => (
+            <div key={q.id} onClick={() => !loading && !downloading && setQuality(q.id)}
+              className={`quality-card border-2 rounded-xl p-4 text-center ${quality===q.id?'selected border-indigo-500':'border-gray-200'} ${(loading||downloading)?'opacity-50':''}`}>
+              <div className="text-2xl mb-1">{q.icon}</div>
+              <div className="font-bold text-gray-800">{q.label}</div>
+              <div className="text-xs text-gray-500">{q.desc}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {!videoInfo && (
+        <button onClick={fetchVideo} disabled={loading} className="w-full py-4 btn-primary text-white font-bold rounded-xl flex items-center justify-center gap-2">
+          {loading ? <><div className="spinner"></div><span>Finding...</span></> : <><span>🔍</span><span>Find Video</span></>}
+        </button>
+      )}
+
+      {videoInfo && !downloading && (
+        <div className="fade-in">
+          <div className="bg-green-50 border border-green-200 rounded-xl p-4 mb-4">
+            <h3 className="font-bold text-green-800 mb-2">✅ Video Found!</h3>
+            {videoInfo.cover && !videoInfo.isAudio && <img src={videoInfo.cover} alt="Thumbnail" className="w-full h-48 object-cover rounded-lg mb-3" />}
+            <p className="text-sm text-green-700 font-medium">{utils.truncateText(videoInfo.title, 60)}</p>
+            <p className="text-xs text-green-600 mt-1">👤 {videoInfo.author}</p>
+          </div>
+          <button onClick={downloadDirect} className="w-full py-4 btn-success text-white font-bold rounded-xl">⬇️ Download {quality==='audio'?'MP3':'MP4'}</button>
+          <button onClick={resetForm} className="w-full mt-3 py-3 text-gray-500 hover:text-gray-700 text-sm font-medium">← Search different video</button>
+        </div>
+      )}
+
+      {downloading && (
+        <div className="bg-blue-50 rounded-xl p-6 text-center">
+          <div className="spinner mx-auto mb-3"></div>
+          <p className="text-blue-800 font-semibold">Downloading... {downloadProgress}%</p>
+          <div className="progress-bar max-w-xs mx-auto"><div className="progress-fill" style={{width:`${downloadProgress}%`}}></div></div>
+        </div>
+      )}
+
+      {error && <div className="mt-4 alert alert-error"><p className="font-medium">⚠️ {error}</p></div>}
+      {success && !downloading && <div className="mt-4 alert alert-success"><p className="font-medium">{success}</p></div>}
+    </div>
+  );
+};
+
+const SEOContent = () => (
+  <section className="seo-content">
+    <h2>About TikTok 4K Downloader</h2>
+    <p>Get TikTok videos in stunning 4K quality. The highest resolution available for free download. Our tool is fast, secure, and works on any device.</p>
+    <h3>Key Features</h3>
+    <ul>
+      <li style="margin-bottom: 0.5rem;">4K quality</li>
+      <li style="margin-bottom: 0.5rem;">Ultra HD</li>
+      <li style="margin-bottom: 0.5rem;">Stunning resolution</li>
+    </ul>
+    <h3>Frequently Asked Questions</h3>
+    <div class="faq-item">
+            <h3>Is 4K really available?</h3>
+            <p>Yes, if the original video was uploaded in 4K, we can download it.</p>
+        </div><div class="faq-item">
+            <h3>How big are 4K files?</h3>
+            <p>4K videos are larger - typically 50-100MB per minute of video.</p>
+        </div>
+    <h3>Related Tools</h3>
+    <div className="related-links">
+      <a href="/tiktok-video-downloader.html" class="related-link">TikTok Video Downloader</a><a href="/tiktok-video-downloader-without-watermark.html" class="related-link">TikTok Video Downloader Without Watermark</a><a href="/download-tiktok-video.html" class="related-link">Download TikTok Video</a><a href="/tiktok-downloader-no-watermark.html" class="related-link">TikTok Downloader No Watermark</a><a href="/save-tiktok-video.html" class="related-link">Save TikTok Video</a><a href="/tiktok-mp3-converter.html" class="related-link">TikTok MP3 Converter</a>
+    </div>
+  </section>
+);
+
+const HowToUse = () => (
+  <section className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-white border border-white/20">
+    <h2 className="text-xl font-bold mb-4">How to Use</h2>
+    <ol className="space-y-3 text-white/90">
+      <li className="flex items-start gap-3"><span className="bg-white/20 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">1</span><span>Copy the TikTok video URL</span></li>
+      <li className="flex items-start gap-3"><span className="bg-white/20 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">2</span><span>Paste the URL above</span></li>
+      <li className="flex items-start gap-3"><span className="bg-white/20 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">3</span><span>Select quality (HD/SD/Audio)</span></li>
+      <li className="flex items-start gap-3"><span className="bg-white/20 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">4</span><span>Click Download</span></li>
+    </ol>
+  </section>
+);
+
+const Features = () => {
+  const features = [
+    { icon: '🛡️', title: 'No Watermark', desc: 'Clean videos' },
+    { icon: '⚡', title: 'Fast', desc: 'Instant download' },
+    { icon: '🔒', title: 'Safe', desc: 'No registration' },
+    { icon: '📱', title: 'All Devices', desc: 'Mobile & desktop' },
+    { icon: '🎵', title: 'MP3', desc: 'Audio extract' },
+    { icon: '🎬', title: 'HD', desc: 'High quality' }
+  ];
+  return (
+    <section>
+      <h2 className="text-xl font-bold text-white text-center mb-4">Why Choose Us</h2>
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {features.map((f,i) => (
+          <div key={i} className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center text-white border border-white/20">
+            <div className="text-3xl mb-2">{f.icon}</div>
+            <h3 className="font-semibold text-sm">{f.title}</h3>
+            <p className="text-xs text-white/80">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+const Footer = () => (
+  <footer className="text-center text-white/70 text-sm py-8 mt-8">
+    <div className="max-w-2xl mx-auto">
+      <p><strong>Disclaimer:</strong> For personal use only. Respect copyright laws.</p>
+      <p className="mt-1">© {new Date().getFullYear()} TikTok Downloader Pro. Not affiliated with TikTok.</p>
+    </div>
+  </footer>
+);
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+
+</body>
+</html>
