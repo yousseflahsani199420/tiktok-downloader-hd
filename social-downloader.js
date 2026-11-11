@@ -2,6 +2,8 @@
   "use strict";
 
   const config = window.DOWNLOADER_CONFIG || {};
+  const words = config.words || {};
+  const tr = (key, fallback) => (words[key] || fallback);
   const platformKey = String(config.platformKey || "").toLowerCase();
   const alwaysShowFallback = !!config.alwaysShowFallback;
   const state = {
@@ -50,12 +52,12 @@
 
   function setFindBusy(isBusy) {
     findBtn.disabled = isBusy;
-    findBtn.textContent = isBusy ? "Finding..." : "Find Video";
+    findBtn.textContent = isBusy ? tr("finding", "Finding...") : tr("find", "Find Video");
   }
 
   function setDownloadBusy(isBusy) {
     downloadBtn.disabled = isBusy;
-    downloadBtn.textContent = isBusy ? "Downloading..." : "Download Now";
+    downloadBtn.textContent = isBusy ? tr("downloading", "Downloading...") : tr("download", "Download Now");
   }
 
   function resetProgress() {
@@ -115,7 +117,7 @@
       btn.classList.toggle("active", active);
       btn.setAttribute("aria-pressed", active ? "true" : "false");
     });
-    if (state.media && metaSub) metaSub.textContent = "Mode: " + state.mode.toUpperCase();
+    if (state.media && metaSub) metaSub.textContent = tr("mode", "Mode") + ": " + state.mode.toUpperCase();
   }
 
   function pickMediaUrl(payload) {
@@ -209,7 +211,7 @@
       audioPreview.hidden = true;
     }
     if (previewFallback) {
-      previewFallback.textContent = "Video preview is unavailable from this media source. You can still try Download Now.";
+      previewFallback.textContent = tr("preview_video", tr("preview_video", tr("preview_video", tr("preview_video", tr("preview_video", tr("preview_video", "Video preview is unavailable from this media source. You can still try Download Now."))))));
       previewFallback.hidden = true;
     }
   }
@@ -235,7 +237,7 @@
     mediaPreview.addEventListener("error", () => {
       mediaPreview.hidden = true;
       if (previewFallback) {
-        previewFallback.textContent = "Video preview is unavailable from this media source. You can still try Download Now.";
+        previewFallback.textContent = tr("preview_video", tr("preview_video", tr("preview_video", tr("preview_video", tr("preview_video", tr("preview_video", "Video preview is unavailable from this media source. You can still try Download Now."))))));
         previewFallback.hidden = false;
       }
     });
@@ -250,7 +252,7 @@
     audioPreview.addEventListener("error", () => {
       audioPreview.hidden = true;
       if (previewFallback) {
-        previewFallback.textContent = "Audio preview is unavailable from this media source. You can still try Download Now.";
+        previewFallback.textContent = tr("preview_audio", tr("preview_audio", tr("preview_audio", tr("preview_audio", tr("preview_audio", tr("preview_audio", "Audio preview is unavailable from this media source. You can still try Download Now."))))));
         previewFallback.hidden = false;
       }
     });
@@ -293,7 +295,7 @@
     blurActiveControl();
     const normalizedUrl = normalizeInputUrl(urlInput.value);
     if (!normalizedUrl) {
-      setStatus("Please enter a valid " + (config.platformName || "social") + " URL.", "err");
+      setStatus(tr("invalid", "Please enter a valid {platform} URL.").replace("{platform}", config.platformName || "social"), "err");
       previewEmpty.style.display = "block";
       resultBox.style.display = "none";
       state.media = null;
@@ -316,13 +318,13 @@
       const media = await fetchFromCobalt(normalizedUrl, state.mode);
       state.media = media;
       if (metaTitle) metaTitle.textContent = media.title;
-      if (metaSub) metaSub.textContent = "Mode: " + state.mode.toUpperCase();
+      if (metaSub) metaSub.textContent = tr("mode", "Mode") + ": " + state.mode.toUpperCase();
       showMediaPreview(media);
       previewEmpty.style.display = "none";
       resultBox.style.display = "block";
       downloadBtn.disabled = false;
       setAlternativeButtonVisible(false);
-      setStatus("Media found. Preview it here, then click Download Now.", "ok");
+      setStatus(tr("found", "Media found. Preview it here, then click Download Now."), "ok");
     } catch (error) {
       state.media = null;
       clearPreviewSources();
@@ -331,8 +333,8 @@
       downloadBtn.disabled = true;
       setAlternativeButtonVisible(true);
       const fallbackMessage = alwaysShowFallback
-        ? "Primary server is busy. Click Open Alternative Downloader."
-        : (error.message || "Could not fetch media for this URL.");
+        ? tr("busy", "Primary server is busy. Click Open Alternative Downloader.")
+        : (error.message || tr("could_not_fetch", "Could not fetch media for this URL."));
       setStatus(fallbackMessage, "err");
     } finally {
       setFindBusy(false);
@@ -342,7 +344,7 @@
   async function downloadMedia() {
     blurActiveControl();
     if (!state.media || !state.media.url) {
-      setStatus("Find media first.", "err");
+      setStatus(tr("find_first", "Find media first."), "err");
       return;
     }
     setDownloadBusy(true);
@@ -362,9 +364,9 @@
       anchor.click();
       document.body.removeChild(anchor);
       window.setTimeout(() => URL.revokeObjectURL(objectUrl), 1000);
-      setStatus("Downloaded: " + filename, "ok");
+      setStatus(tr("downloaded", "Downloaded: ") + filename, "ok");
     } catch {
-      setStatus("Direct download blocked by browser. Opening source URL instead.", "err");
+      setStatus(tr("download_blocked", "Direct download blocked by browser. Opening source URL instead."), "err");
       fallbackOpenSource(state.media.url);
     } finally {
       setDownloadBusy(false);
@@ -380,7 +382,7 @@
         urlInput.value = (clipText || "").trim();
         setStatus("", "ok");
       } catch {
-        setStatus("Clipboard access is blocked in this browser.", "err");
+        setStatus(tr("clipboard", "Clipboard access is blocked in this browser."), "err");
       }
     });
   }
