@@ -23,14 +23,33 @@
 <meta content="#0b1020" name="theme-color"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap"/></noscript>
 <link href="app.css" rel="stylesheet"/>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3TDZE61768"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-3TDZE61768');
+
+    // Load analytics after the initial render, or on first visitor interaction.
+    (function () {
+      var loaded = false;
+      function loadAnalytics() {
+        if (loaded) return;
+        loaded = true;
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-3TDZE61768';
+        document.head.appendChild(script);
+      }
+      ['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach(function (eventName) {
+        window.addEventListener(eventName, loadAnalytics, { once: true, passive: true });
+      });
+      window.addEventListener('load', function () {
+        window.setTimeout(loadAnalytics, 3500);
+      }, { once: true });
+    })();
   </script>
 <meta content="Full Downloader App" property="og:site_name"/><meta content="en_US" property="og:locale"/><meta content="Full Downloader App logo" property="og:image:alt"/><meta content="Full Downloader App logo" name="twitter:image:alt"/><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://tiktokdownloader.online/facebook.html#webpage","url":"https://tiktokdownloader.online/facebook.html","name":"Facebook Video Downloader | Full Downloader App","description":"Check public Facebook video links in your browser. Paste a Facebook or fb.watch URL and review the video or audio options returned.","inLanguage":"en","isPartOf":{"@id":"https://tiktokdownloader.online/#website"},"dateModified":"2026-11-10","breadcrumb":{"@id":"https://tiktokdownloader.online/facebook.html#breadcrumb"}},{"@type":"WebApplication","@id":"https://tiktokdownloader.online/facebook.html#application","name":"Facebook Video Link Tool","url":"https://tiktokdownloader.online/facebook.html","description":"Check public Facebook video links in your browser. Paste a Facebook or fb.watch URL and review the video or audio options returned.","applicationCategory":"MultimediaApplication","browserRequirements":"Requires a modern browser with JavaScript enabled","operatingSystem":"Any"},{"@type":"BreadcrumbList","@id":"https://tiktokdownloader.online/facebook.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tiktokdownloader.online/"},{"@type":"ListItem","position":2,"name":"Facebook Downloader","item":"https://tiktokdownloader.online/facebook.html"}]},{"@type":"FAQPage","@id":"https://tiktokdownloader.online/facebook.html#faq","mainEntity":[{"@type":"Question","name":"How do I use the Facebook video downloader?","acceptedAnswer":{"@type":"Answer","text":"Copy a public Facebook video URL or supported fb.watch link, paste it here, choose a mode, and click Find Video."}},{"@type":"Question","name":"Can I download a private Facebook video?","acceptedAnswer":{"@type":"Answer","text":"No. This page does not bypass privacy settings, group membership, or other access controls. Use only content you are allowed to access and save."}},{"@type":"Question","name":"Why does a Facebook link fail?","acceptedAnswer":{"@type":"Answer","text":"The link may be private, expired, removed, or unsupported. Confirm that it opens publicly in your browser and try again."}},{"@type":"Question","name":"Are HD and audio always available?","acceptedAnswer":{"@type":"Answer","text":"No. The available formats depend on the video and the response from the external processing service."}}]}]}</script></head>
 <body>

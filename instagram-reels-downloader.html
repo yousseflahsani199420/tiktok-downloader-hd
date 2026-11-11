@@ -23,14 +23,33 @@
 <meta content="#0b1020" name="theme-color"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap"/></noscript>
 <link href="app.css" rel="stylesheet"/>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3TDZE61768"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-3TDZE61768');
+
+    // Load analytics after the initial render, or on first visitor interaction.
+    (function () {
+      var loaded = false;
+      function loadAnalytics() {
+        if (loaded) return;
+        loaded = true;
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-3TDZE61768';
+        document.head.appendChild(script);
+      }
+      ['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach(function (eventName) {
+        window.addEventListener(eventName, loadAnalytics, { once: true, passive: true });
+      });
+      window.addEventListener('load', function () {
+        window.setTimeout(loadAnalytics, 3500);
+      }, { once: true });
+    })();
   </script>
 <meta content="Full Downloader App" property="og:site_name"/><meta content="en_US" property="og:locale"/><meta content="Full Downloader App logo" property="og:image:alt"/><meta content="Full Downloader App logo" name="twitter:image:alt"/><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://tiktokdownloader.online/instagram-reels-downloader.html#webpage","url":"https://tiktokdownloader.online/instagram-reels-downloader.html","name":"Instagram Reels Downloader | Save Public Reels","description":"Use a public Instagram Reel link to check its available video, preview the result in your browser, and save the file when the source permits.","inLanguage":"en","isPartOf":{"@id":"https://tiktokdownloader.online/#website"},"dateModified":"2026-11-10","breadcrumb":{"@id":"https://tiktokdownloader.online/instagram-reels-downloader.html#breadcrumb"}},{"@type":"WebApplication","@id":"https://tiktokdownloader.online/instagram-reels-downloader.html#application","name":"Instagram Reels Downloader Tool","url":"https://tiktokdownloader.online/instagram-reels-downloader.html","description":"Use a public Instagram Reel link to check its available video, preview the result in your browser, and save the file when the source permits.","applicationCategory":"MultimediaApplication","browserRequirements":"Requires a modern browser with JavaScript enabled","operatingSystem":"Any"},{"@type":"BreadcrumbList","@id":"https://tiktokdownloader.online/instagram-reels-downloader.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tiktokdownloader.online/"},{"@type":"ListItem","position":2,"name":"Instagram","item":"https://tiktokdownloader.online/instagram.html"},{"@type":"ListItem","position":3,"name":"Instagram Reels Downloader","item":"https://tiktokdownloader.online/instagram-reels-downloader.html"}]},{"@type":"FAQPage","@id":"https://tiktokdownloader.online/instagram-reels-downloader.html#faq","mainEntity":[{"@type":"Question","name":"How do I copy an Instagram Reel link?","acceptedAnswer":{"@type":"Answer","text":"Open the Reel, tap Share, and choose Copy link. Paste the copied public URL into the field above."}},{"@type":"Question","name":"Can I download a Reel from a private account?","acceptedAnswer":{"@type":"Answer","text":"No. This page is intended for public links and does not bypass private-account settings or login requirements."}},{"@type":"Question","name":"Why does the Reel preview sometimes not play?","acceptedAnswer":{"@type":"Answer","text":"Some external media hosts block browser playback from other websites or return short-lived media URLs. The download may still work, but preview playback depends on the media host."}},{"@type":"Question","name":"Can I use this for regular Instagram videos?","acceptedAnswer":{"@type":"Answer","text":"This page focuses on Reels. For other public Instagram video posts, use the main Instagram video downloader page."}}]},{"@type":"WebSite","@id":"https://tiktokdownloader.online/#website","url":"https://tiktokdownloader.online/","name":"Full Downloader App","inLanguage":"en"}]}</script></head>
 <body>
